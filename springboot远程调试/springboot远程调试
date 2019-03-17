@@ -1,0 +1,10 @@
+springboot远程调试步骤
+
+1.
+在服务器端用如下命令启动程序：
+nohup java -jar -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005 demo-0.0.1-SNAPSHOT.jar &
+
+2.
+在idea中设置启动命令：
+添加remote，并在host设置主机IP，在port设置上一步的address监听端口
+（在command line arguments for remote JVM设置-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005）
