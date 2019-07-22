@@ -1,0 +1,43 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.springframework.boot:spring-boot-gradle-plugin:1.5.21.RELEASE'
+    }
+}
+
+plugins {
+    id 'java'
+}
+
+apply plugin: 'org.springframework.boot'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+
+    //mysql
+    compile "mysql:mysql-connector-java:5.1.35"
+    //jpa
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '1.5.21.RELEASE'
+    //hikari
+    // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
+    compile group: 'com.zaxxer', name: 'HikariCP', version: '3.3.1'
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-jdbc
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '1.5.21.RELEASE'
+
+
+
+
+
+
+}
