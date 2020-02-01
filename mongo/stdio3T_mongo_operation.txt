@@ -1,0 +1,16 @@
+//建表
+show collections
+db.createCollection('person')
+db.getCollection('person').drop()
+//增
+db.person.insert({'id':1,'name':'Tom','age':13});
+//删
+db.person.remove({'name':'Tom'},1);
+//改
+db.person.insert({'name':'Jerry','age':14});
+db.person.update({'name':'Jerry'},{$set:{'name':'Gerry'}});
+//查
+db.person.find();
+db.person.find({'age':14,'name':'Gerry'});
+db.person.find({$or:[{'age':16},{'name':'Gerry'}]});
+db.person.find({$or:[{'age':16},{'name':'Lucy'}]}).sort({'name':-1});
