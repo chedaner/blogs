@@ -1,4 +1,4 @@
-1.java
+#### 1.java
 
 //安装
 sudo apt-get update
@@ -9,7 +9,7 @@ Java -version
 	
 	
 
-2.mysql
+#### 2.mysql
 
 //安装
 sudo apt-get update  
@@ -37,7 +37,7 @@ mysql>select host, user from user;
 
 
 
-3.tomcat
+#### 3.tomcat
 
 apache-tomcat-8.0.47.tar.gz
 
@@ -46,9 +46,13 @@ tar -zxvf apache-tomcat-8.0.47.tar.gz
 
 
 
-4.nginx
+#### 4.nginx
+
 https://www.cnblogs.com/hanfan/p/10393913.html
 
-5.redis
+
+
+#### 5.redis
+
 https://blog.csdn.net/xx345385463/article/details/90695629
 https://blog.csdn.net/qq_35992900/article/details/82950157

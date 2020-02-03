@@ -1,0 +1,28 @@
+
+
+#### 1.端口占用
+
+​	（1）lsof -i:端口号
+​	（2）netstat -tunlp | grep 端口号
+​			-t (tcp) 仅显示tcp相关选项
+​			-u (udp)仅显示udp相关选项
+​			-n 拒绝显示别名，能显示数字的全部转化为数字
+​			-l 仅列出在Listen(监听)的服务状态
+​			-p 显示建立相关链接的程序名
+​	（3）kill -9 {PID}
+
+#### 2.查看Linux系统版本信息
+
+（1）查看Linux内核版本命令
+
+​		1.cat /proc/version
+
+​		2.uname -a
+
+（2）查看Linux系统版本的命令
+
+​		1.lsb_release -a
+
+​		2.cat /etc/redhat-release
+
+​		3.cat /etc/issue
