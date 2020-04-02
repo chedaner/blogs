@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="/js/jquery-2.1.4.js"></script>
+
+    <!--eruda工具用于前端开发手机端浏览器调试log-->
+    <script src="//cdn.bootcss.com/eruda/1.5.2/eruda.min.js"></script>
+    <script>eruda.init();</script>
+</head>
+<body>
+<button id="testt" style="width: 180px;height: 60px;margin-top: 20%">ttt</button>
+</body>
+<script>
+    $(function() {
+        $('#testt').click(function() {
+            var tt = "tttttt";
+            console.log(tt);
+            alert(tt);
+        });
+    });
+
+
+</script>
+
+</html>
