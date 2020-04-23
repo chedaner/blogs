@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <script src="/js/jquery-2.1.4.js"></script>
+    <!--sign-->
+    <script src="/js/sign.js"></script>
+    <script src="/js/jsrsasign-all-min.js"></script>
+
+</head>
+<body>
+<script>
+    var params = JSON.stringify({appName:"a",userId: "b", bizData: {cerNo:"c",acName:"d"}})
+    var finalParams = warpPrams(params);
+    console.log("frontEnd_requestParams="+JSON.stringify(finalParams));
+    //abchina校验
+    $.ajax({
+        url: "http://localhost:8082/faceLogin/searchFaceTest",
+        timeout : 180000,
+        type:'post',
+        // data:JSON.stringify({appName:appName,userId: userId, appId: appId, serviceId: picAuthServiceId,interfaceId:picAuthInterfaceId, bizData: {cerNo:userId,acName:acName,img:imgBase64.substring(23)}}),
+        // data:finalParams,
+        data:JSON.stringify(finalParams),
+        dataType:"JSON",
+        headers: {
+            "content-type": "application/json;charset=utf-8",
+            "cache-control": "no-cache"
+        },
+        // async:true,
+        success : function(result) {
+            console.log("getPinyinName",result);
+            alert("ttt");
+            // var rst = JSON.parse(result);
+            // if("0000" != result.respCode){
+            //     var redirectUrl = result.redirectUrl;
+            //     var url = 'https://opensx.test.abchina.com'+redirectUrl+'&userLvl=4&timeOut=120&channel=1&userId='+userId+"&appId="+appId;
+            //     url = encodeURI(url);
+            //     window.location.href=url;
+            //     // dengdai("正在重新识别...");
+            // }else {
+            //     $("#ts").html("匹配成功！");
+            //     var redirectUrl = result.redirectUrl;
+            //     var url = 'https://opensx.test.abchina.com'+redirectUrl+'&userLvl=4&timeOut=120&channel=1&userId='+userId+"&appId="+appId;
+            //     url = encodeURI(url);
+            //     window.location.href=url;
+            // }
+        },
+        error : function (error) {
+            $("#ts").html('识别失败！请检查网络！');
+            // alert('失败！请检查网络！');
+        }
+    });
+</script>
+</body>
+</html>
