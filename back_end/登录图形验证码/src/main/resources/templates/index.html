@@ -1,0 +1,61 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <base href="<%=basePath%>"><!-- 配置页面基准路径 -->
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>登陆</title>
+    <script src="/js/jquery-2.1.4.js"></script>
+</head>
+<body class="login-bg">
+<div class="tips-toast" ></div>
+<!--  container -->
+<div class="loginBox">
+    <div class="login-box">
+        <div class="row">
+            <form role="form" action="login.html" method="post" class="login-form" id="defaultForm">
+
+                <div class="form-group">
+                    <input type="text" name="username" placeholder="请输入账号" class="form-username form-control" id="form-username">
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="请输入密码" class="form-password form-control" id="form-password" />
+                </div>
+                <div class="form-group form-block"   >
+                    <div class="col-md-6 remove-padding">
+                        <input type="text" name="validateCode" placeholder="验证码" class="form-control" id="form-code">
+                    </div>
+                    <div class="col-md-6 remove-padding border">
+                        <span class="code-img"><img id="img" src=""/></span>
+                    </div>
+                </div>
+                <div class="form-group form-block"  >
+                    <div class="col-md-6 remove-padding remember" >
+                        <input type="checkbox" class="remember-check" />   记住我
+                    </div>
+                    <div class="col-md-6 remove-padding border text-right">
+                        <a href="forget_password.html">忘记密码?</a>
+                    </div>
+                </div>
+                <button id="validateBtn" type="button" class="btn btn-primary  btn-form">登录</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        var img = document.getElementById("img");
+        img.src = "/code/imgs?date=" + new Date().valueOf();//直接使用new Date()会导致ie内核的浏览器无法加载验证码
+    });
+    $('.code-img').click(function () {
+        getImg();
+    });
+    function getImg(){
+        var img = document.getElementById("img");
+        img.src = "/code/imgs?date=" + new Date().valueOf();//直接使用new Date()会导致ie内核的浏览器无法加载验证码
+    }
+</script>
+</body>
+</html>
